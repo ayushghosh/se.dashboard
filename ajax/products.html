@@ -1,42 +1,83 @@
+<div class="filters_list">
+	<span class="filter" data-filter="all">All</span>
+	<span class="filter" data-filter=".template-true">Templated</span>
+	<span class="filter" data-filter=".template-false">Scratch</span>
+	<span class="filter" data-filter=".quote-yes">Quoted</span>
+	<span class="filter" data-filter=".quoteApproved-yes">Quote Approved</span>
+	<span class="filter" data-filter=".proto-yes">Proto Sample</span>
+	<!-- <span class="filter">None</span> -->
+</div>
+<br>
+<div class="view"></div>
+
 <script id="t-product" type="text/x-handlebars-template">
-	<div class="content_card product_card">
-		<div class="content_card__data product_card__data">
-			<div class="product_card__data__pic">
-				<img src="{{ image }}">
-			</div>
-			<div class="product_card__data__info">
-				<span class="content_card__data_label">Product</span>
-				<span class="product_card__data__name-data content_card__data_value">{{ name }}</span>
-				<br>
-				<span class="content_card__data_label">Brand</span>
-				<span class="product_card__data__name-data content_card__data_value">{{ brand }}</span>
-				<br>
-				<span class="content_card__data_label">Season</span>
-				<span class="product_card__data__name-data content_card__data_value">{{ season }}</span>
-				<br>
-				<span class="content_card__data_label">Category</span>
-				<span class="product_card__data__name-data content_card__data_value">{{ category }}</span>
-				<br>
-				<span class="content_card__data_label">Email</span>
-				<span class="product_card__data__email-data content_card__data_value">{{ ownerEmail }}</span>
-				<br>
-				<span class="content_card__data_label">ID</span>
-				<span class="product_card__data__id-data content_card__data_value">{{ toUpperCase id }}</span>
-				<br>
-			</div>
+<div class="content_card product_card mix template-{{ isFromTemplate}} quote-{{ isQuoted }}  quoteApproved-{{ isQuoteApproved }} proto-{{ isSampleRequested }}">
+	<span class="content_card__actions___top">
+		<!-- <i class="ti-check"></i> -->
+		<!-- <i class="ti-money"></i><br> -->
+		<i class="ti-bookmark"></i>
+	</span>
+	<div class="content_card__data product_card__data">
+		<div class="content_card__data__pic product_card__data__pic">
+			<img src="{{ image }}">
 		</div>
-	<!--	<div class="content_card__data__tags product_card__data__tags">
-			<a class="tags">Customer</a>
-		  	{{#each tags}}
-				<a class="tags">{{this}}</a>
-  			{{/each}}
-		</div> -->
-		<div class="content_card__actions">
-			<i class="ti-email c1" data-id={{ userId }} title="edit"> &nbsp;</i>
-					<i class="ti-notepad" data-id={{ userId }}> &nbsp;</i>
-					<!-- <i class="ti-save" data-id={{ userId }}> &nbsp;</i> -->
-					<i class="ti-trash c2" data-id={{ userId }} onclick="del('fabrics','{{ userId }}')"> &nbsp;</i>
-					<!-- <i class="ti-more-alt" data-id={{ userId }}> &nbsp;</i> -->
+		<div class="content_card__data__info product_card__data__info">
+			<span class="content_card__data_label">ID</span>
+			<span class="content_card__data_value">{{ toUpperCase id }}</span>
+			<br>
+			<span class="content_card__data_label">Name</span>
+			<span class="content_card__data_value">{{ name }}</span>
+			<br>
+			<span class="content_card__data_label">Brand</span>
+			<span class="content_card__data_value">{{ brand }}</span>
+			<br>
+			<span class="content_card__data_label">Season</span>
+			<span class="content_card__data_value">{{ season }}</span>
+			<!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+			<br>
+			<span class="content_card__data_label">Category</span>
+			<span class="content_card__data_value">{{ category }}</span>
+			<br>
+			<span class="content_card__data_label">Stage</span>
+			<span class="content_card__data_value txt-upr">{{ stage }}</span>
+			<br>
+			<span class="content_card__data_label">Quoted</span>
+			<span class="content_card__data_value txt-upr">{{ isQuoted }}</span>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<!-- <br> -->
+			<span class="content_card__data_label">Approved</span>
+			<span class="content_card__data_value txt-upr">{{ isQuoteApproved }}</span>
+			<br>
+			<span class="content_card__data_label">Templated</span>
+			<span class="content_card__data_value txt-upr">{{ isFromTemplate }}</span>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<!-- <br> -->
+			<span class="content_card__data_label">Locked</span>
+			<span class="content_card__data_value txt-upr">{{ isLocked}}</span>
+			<br><br>
+			<span class="content_card__data_label">Name</span>
+			<span class="content_card__data_value">{{ ownerName}}</span>
+			<br>
+			<span class="content_card__data_label">Email</span>
+			<span class="content_card__data_value">{{ ownerEmail}}</span>
+			<br>
+			<span class="content_card__data_label">USER ID</span>
+			<span class="content_card__data_value">{{ toUpperCase ownerId }}</span>
+			<br>
+			
 		</div>
 	</div>
+	<!-- 
+	<div class="content_card__data__tags product_card__data__tags">
+		<a class="tags">Primary</a>
+	</div> 
+	-->
+	<div class="content_card__actions">
+		<a><i class="ti-email" data-id={{ toUpperCase id}} title="edit"></i></a>
+		<a><i class="ti-notepad" data-id={{ toUpperCase id}}></i></a>
+		<a><i class="ti-trash" data-id={{ toUpperCase id}}></i></a>
+		<a><i class="ti-lock" data-id={{ toUpperCase id}}></i></a>
+		<a href="#/products/{{ toUpperCase id}}"><i class="ti-info-alt" data-id={{ toUpperCase id}}></i></a>
+	</div>
+</div>
 </script>
