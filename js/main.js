@@ -91,6 +91,7 @@ function setHeights(){
 * init to initializa the page on first load
 */
 function init(){
+	// localSet('token','67e2099f78bdf232d311000b8fc4c202c298f87eb8dac0252b798c47deddc00b');
 	setHeights();
 	var token = localGet('token');
 	// if(!token)
@@ -248,7 +249,78 @@ api = {
 
 
 
+var fb = new Firebase("https://sourceeasy-help.firebaseio.com/");
+
+fb.on("value", function(snapshot) {
+  console.log(snapshot.val());
+  var help = snapshot.val();
+  // alert(share_url);
+  if(help != null){
+  	var share_url = (decodeURIComponent(help.share_url));
+	$('.dialog__content__data').html('<h1><strong>'+help.user_name+'</strong> needs your help in creating his product.</h2><h2>'+help.user_email+'</h2><br><h2>'+help.user_id.toUpperCase()+'</h2><br><br><span class="ti-timer"></span><div class="dialog__content__help_timer">00:00</div>');
+	$('.dialog__action__default').html('<a href="'+share_url+'" class="btn-small dialog__action" target="_blank" data-dialog-close2>Help</a>');
+	$('.dialog__action__default').show();
+	$('.dialog__action__default').on('click',function(){
+    	$('#alarm-ring')[0].pause();
+  		$('.dialog__action__close').trigger('click');
+	});
+	try{
+        $('#alarm-ring')[0].play();
+    }
+    catch(e){}
+	var display = document.querySelector('.dialog__content__help_timer');
+    startTimer(120, display);
+    setTimeout(function(){ 
+    	 	$('.dialog__action__default').hide();
+    	 	$('#alarm-ring')[0].pause();
+  			$('.dialog__action__close').trigger('click');
+    	 }
+    	, 120000);
+	$('.dialog-trigger').trigger('click'); 
+  }
+  else{
+  	$('#alarm-ring')[0].pause();
+  	// $('.dialog__action__close').trigger('click');
+  }
+  	
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
 
 
 
+function startTimer(duration, display) {
+    var start = Date.now(),
+        diff,
+        minutes,
+        seconds,var_timer;
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds; 
+
+        if (diff <= 0) {
+        	clearInterval(var_timer);
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+    };
+    // we don't want to wait a full second before the timer starts
+    timer();
+    var_timer = setInterval(timer, 1000);
+}
+
+
+
+	
 

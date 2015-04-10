@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/icons/themify-icons.css">
         <link rel="stylesheet" href="css/inputs/inputs.css">
+        <link rel="stylesheet" href="css/offline-theme-default.css">
+        <link rel="stylesheet" href="css/offline-language-english.css">
+        <link rel="stylesheet" type="text/css" href="css/dialog/dialog.css" />
+        <link rel="stylesheet" type="text/css" href="css/dialog/dialog-don.css" />
     </head>
     <body>
         <div class="body w100">
@@ -63,12 +67,34 @@
             <!-- <div class="footer w100">
                 
             </div> -->
-            
+         
+        </div>
+        <audio id="alarm-ring" preload loop>
+            <source src="audio/ticktac.mp3" type="audio/mpeg" />
+            <source src="audio/ticktac.ogg" type="audio/ogg" />
+        </audio>
+        <span data-dialog="somedialog" class="trigger dialog-trigger">&nbsp;</span>
+        <div id="somedialog" class="dialog">
+            <div class="dialog__overlay"></div>
+            <div class="dialog__content">
+                <div class="dialog__content__data">
+                    
+                </div>
+                <div class="div__content_actions">
+                    <span class="dialog__action__default">
+                        <span class="btn-small dialog__action">Accept</span>
+                    </span>
+                    <span class="btn-small btn-sec dialog__action dialog__action__close" data-dialog-close>Close</span>
+                </div>
+            </div>
         </div>    
         <script src="js/jquery-2.1.3.min.js"></script>
         <script src="js/md5.min.js"></script>
         <script src="js/handlebars-v3.0.0.js"></script>
         <script src="js/jquery.mixitup.min.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
+        <script src="js/offline.min.js"></script>
+        <script src="js/dialog.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

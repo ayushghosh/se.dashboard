@@ -337,9 +337,9 @@ h4 {
     max-width: 450px;
 }
 .product_card__data__pic{
-    width: 450px;
+    width: 100%;
     height: 200px;
-    max-width: 450px;
+    max-width: 100%;
     max-height: 200px;
     text-align: center;
 }
@@ -355,6 +355,79 @@ h4 {
     display: none;
 }
 
+
+.dialog-trigger{
+    display: none;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+}
+.dialog__action{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.div__content_actions{
+    text-align: center;
+    margin-top: 30px;
+}
+.dialog__content__help_timer{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 100;
+}
+
+.btn{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 25px !important;
+    border-radius: 50px;
+    border: 2px solid #00FFAA;
+    color: #00FFAA;
+    letter-spacing:1px;
+    width: 250px;
+    height: 70px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+    text-align: center;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.btn:hover, .btn-small:hover{
+    background-color: #00FFAA;
+    color: #000;
+}
+
+.btn-small {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    padding: 15px !important;
+    border-radius: 50px;
+    border: 2px solid #00FFAA;
+    color: #1ECD97;
+    letter-spacing: 1px;
+    width: 120px;
+    height: 50px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+    text-align: center;
+    font-weight: 100;
+    cursor: pointer;
+}
+.btn-sec {
+  border: 2px solid #f0f0f0;
+  color: rgba(0,0,0,0.4);
+}
+.btn-sec:hover {
+  color: rgba(0,0,0,0.6);
+  background: #fff;
+  border-color: rgba(0,0,0,0.6); 
+}
 
 
 
