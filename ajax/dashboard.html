@@ -1,7 +1,7 @@
 <style type="text/css">
 
 </style>
-<div class="content_card user_card">
+<!-- <div class="content_card user_card">
 	<div class="content_card__data user_card__data">
 		<div class="content_card__data__pic user_card__data__pic">
 			<img src="http://www.gravatar.com/avatar/ccb25cef104aab493205b0127e3906b0?s=90">
@@ -10,7 +10,6 @@
 			<span class="content_card__data_label">Full name</span>
 			<span class="user_card__data__name-data content_card__data_value">Ayush Ghosh</span>
 			<br>
-			<!-- <span class="user_card__data__name">4th March 2015</span> -->
 			<span class="content_card__data_label">Email</span>
 			<span class="user_card__data__email-data content_card__data_value">ayush@sourceeasy.com</span>
 			<br>
@@ -34,11 +33,16 @@
 		<a><i class="ti-trash" data-id={{id}} onclick="del('fabrics','{{id}}')"></i></a>
 		<a href="#/users/{{id}}"><i class="ti-info-alt" data-id={{id}}></i></a>
 	</div>
-</div>
+</div> -->
 
 
 
 <div class="content_card product_card">
+	<span class="content_card__actions___top">
+		<!-- <i class="ti-check"></i> -->
+		<!-- <i class="ti-money"></i><br> -->
+		<i class="ti-bookmark"></i>
+	</span>
 	<div class="content_card__data product_card__data">
 		<div class="content_card__data__pic product_card__data__pic">
 			<img src="http://l1.dev/images/techpack8.png">
@@ -54,10 +58,20 @@
 			<span class="content_card__data_label">Brand</span>
 			<span class="content_card__data_value">LETOTE</span>
 			<br>
+			<span class="content_card__data_label">Season</span>
+			<span class="content_card__data_value">All Year</span>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<br>
+			<span class="content_card__data_label">Category</span>
+			<span class="content_card__data_value">Men</span>
+			<br>
+			<span class="content_card__data_label">Stage</span>
+			<span class="content_card__data_value">pre-production</span>
+			<br>
 			
 		</div>
 	</div>
-	<div class="content_card__data__tags product_card__data__tags">
+	<!-- <div class="content_card__data__tags product_card__data__tags">
 		<a class="tags">Primary</a>
 		<a class="tags">Primary</a>
 		<a class="tags">Primary</a>
@@ -65,11 +79,12 @@
 		<a class="tags">Primary</a>
 		<a class="tags">Primary</a>
 		<a class="tags">Primary</a>
-	</div>
+	</div> -->
 	<div class="content_card__actions">
 		<a><i class="ti-email" data-id={{id}} title="edit"></i></a>
 		<a><i class="ti-notepad" data-id={{id}}></i></a>
 		<a><i class="ti-trash" data-id={{id}} onclick="del('fabrics','{{id}}')"></i></a>
+		<a><i class="ti-lock" data-id={{id}} onclick="del('fabrics','{{id}}')"></i></a>
 		<a href="#/users/{{id}}"><i class="ti-info-alt" data-id={{id}}></i></a>
 	</div>
 </div>
