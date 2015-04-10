@@ -157,6 +157,10 @@ Handlebars.registerHelper('toLowerCase', function(str) {
 Handlebars.registerHelper('toUpperCase', function(str) {
   return str.toUpperCase();
 });
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
 /*
 * 
 */
@@ -172,8 +176,6 @@ function users(){
 	ajax(api.users.get_all, 'GET', 'application/json', {}, true, 'api','usersShow');
 }
 function usersShow(users){
-	console.log(users.data);
-	// $('.content').empty();
 	if(users.data !== null){
 		users = users.data;
 		// users = JSON.parse(users.data);
@@ -181,20 +183,32 @@ function usersShow(users){
 		var template = Handlebars.compile(source);
 		for(var i=0, l=users.length; i<l; i++) {
 			var html = template(users[i]);
-			$('.content').append(html);
+			$('.view').append(html);
 		}
   		
-
+  		ajax(api.users.tags, 'GET', 'application/json', {}, true, 'api','usersShowTags');
 	}
 
 }
 
+function usersShowTags(tags){
+	var newFilters = '';
+	//	<span class="filter" data-filter=".proto-yes">Proto Sample</span>
+
+	if(tags.data.length>0){
+		$.each( tags.data, function( key, value ) {
+		  newFilters = newFilters + '<span class="filter" data-filter=".'+value+'">'+value.capitalize()+'</span>';
+		});
+	}
+	$('.content .filters_list').append(newFilters);
+			$('.view').mixItUp();
+
+}
+
 function products(){
-	console.log("a");
 	ajax(api.products.report, 'GET', 'application/json', {}, true, 'api','productsShow');
 }
 function productsShow(products){
-	console.log(products);
 	// $('.content').empty();
 	if(products !== null){
 		// users = JSON.parse(users.data);
@@ -202,9 +216,9 @@ function productsShow(products){
 		var template = Handlebars.compile(source);
 		for(var i=0, l=products.length; i<l; i++) {
 			var html = template(products[i]);
-			$('.content').append(html);
+			$('.view').append(html);
 		}
-  		
+		$('.view').mixItUp();
 
 	}
 
@@ -221,7 +235,7 @@ switch(location.hostname.split('.').reverse()[0]){
 api = {
   "users": {
     "get_all": base+'/v1/users',
-    "get_al2l": "a"
+    "tags": base+"/v1/usertags"
   },
   "products": {
     "get_all": base+'/v1/products/all',
@@ -229,7 +243,6 @@ api = {
   }
 };
 
-console.log(api.users.get_all);
 
 
 
