@@ -277,6 +277,10 @@ fb.on("value", function(snapshot) {
     	 }
     	, 120000);
 	$('.dialog-trigger').trigger('click'); 
+
+	$('.dialog__action__close').on('click',function(){
+    	 	$('#alarm-ring')[0].pause();
+	});
   }
   else{
   	$('#alarm-ring')[0].pause();
