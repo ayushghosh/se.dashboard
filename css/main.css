@@ -33,6 +33,9 @@ h4 {
 .ltr-spc1 {
     letter-spacing: 1px;
 }
+.txt-upr{
+    text-transform: uppercase;
+}
 .body {
     font-weight: 100;
 }
@@ -143,8 +146,42 @@ h4 {
 }
 
 
+.filters_list{
+    float: right;
+}
+.filters_list span.filter{
+    border-radius: 2px;
+    border: 1px solid #f0f0f0;
+    padding: 8px 10px;
+    margin-left: 4px;
+    margin-right: 4px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 13px;
+    font-weight: 100;
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+    line-height: 35px;
+    background: rgba(255,255,255,0.97);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+}
 
+.filters_list span.filter:hover{
+    color:#468c54;
+    border-color:#a9d8b2;
+    background:rgba(87,173,104,0.1);
+    color:#000;
+    border-color:#00FFAA;
+    background:#00FFAA;
+}
 
+.view{
+    float: left;
+    width: 100%;
+    text-align: center;
+}
 
 .content_card{
     position: relative;
@@ -155,6 +192,7 @@ h4 {
     background: #fff;
     padding: 20px;
     margin: 20px;
+    text-align: left;
 }
 .content_card__actions___top{
     float: right;
@@ -169,6 +207,7 @@ h4 {
 .content_card__data{
     overflow: hidden;
     position: relative;
+    width: 100%;
 }
 .content_card__data__pic{
     position: relative;
@@ -197,6 +236,7 @@ h4 {
     margin-left: 20px;
     font-size: 14px;
     color: rgba(0,0,0,0.44);
+    letter-spacing: 1px;
 }
 .content_card__data__tags{
     text-align: center;
@@ -288,7 +328,9 @@ h4 {
 .user_card__data__info{
     max-height: 90px;
 }
-
+.user_card.mix{
+    display: none;
+}
 
 .product_card{
     min-width: 450px;
@@ -309,7 +351,9 @@ h4 {
     margin-top: 20px;
 }
 
-
+.product_card.mix{
+    display: none;
+}
 
 
 
