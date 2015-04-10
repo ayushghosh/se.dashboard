@@ -1,5 +1,13 @@
+<div class="filters_list">
+	<span class="filter" data-filter="all">All</span>
+	<!-- <span class="filter">None</span> -->
+</div>
+<br>
+
+<div class="view"></div>
+
 <script id="t-user" type="text/x-handlebars-template">
-	<div class="content_card user_card">
+	<div class="content_card user_card mix {{#each tags}} {{ this }} {{/each}}">
 		<div class="content_card__data user_card__data">
 			<div class="content_card__data__pic user_card__data__pic">
 				<img src="{{gravatarurl userEmail }}">
@@ -25,7 +33,7 @@
 		<div class="content_card__actions">
 			<a><i class="ti-email" data-id={{userId}} title="edit"></i></a>
 			<a><i class="ti-notepad" data-id={{userId}}></i></a>
-			<a><i class="ti-trash" data-id={{userId}} onclick="del('fabrics','{{userId}}')"></i></a>
+			<a><i class="ti-trash" data-id={{userId}}></i></a>
 			<a href="#/users/{{userId}}"><i class="ti-info-alt" data-id={{userId}}></i></a>
 		</div>
 	</div>
