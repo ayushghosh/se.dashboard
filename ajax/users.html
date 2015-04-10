@@ -1,0 +1,34 @@
+<script id="t-user" type="text/x-handlebars-template">
+	<div class="content_card user_card">
+		<div class="content_card__data user_card__data">
+			<div class="content_card__data__pic user_card__data__pic">
+				<img src="{{gravatarurl userEmail }}">
+			</div>
+			<div class="content_card__data__info user_card__data__info">
+				<span class="content_card__data_label">Full name</span>
+				<span class="content_card__data_value">{{ userFname }} {{ userLname }}</span>
+				<br>
+				<span class="content_card__data_label">Email</span>
+				<span class="content_card__data_value">{{ userEmail }}</span>
+				<br>
+				<span class="content_card__data_label">ID</span>
+				<span class="content_card__data_value">{{ toUpperCase userId }}</span>
+				<br>
+			</div>
+		</div>
+		<div class="content_card__data__tags user_card__data__tags">
+			<a class="tags">Customer</a>
+		  	{{#each tags}}
+				<a class="tags">{{this}}</a>
+  			{{/each}}
+		</div>
+		<div class="content_card__actions">
+			<a><i class="ti-email" data-id={{userId}} title="edit"></i></a>
+			<a><i class="ti-notepad" data-id={{userId}}></i></a>
+			<a><i class="ti-trash" data-id={{userId}} onclick="del('fabrics','{{userId}}')"></i></a>
+			<a href="#/users/{{userId}}"><i class="ti-info-alt" data-id={{userId}}></i></a>
+		</div>
+	</div>
+</script>
+
+<!-- http://www.designvertise.com/wp-content/uploads/2014/05/Great-customer-service-animated-icon-by-Fede-Cook.gif -->

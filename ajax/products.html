@@ -1,0 +1,42 @@
+<script id="t-product" type="text/x-handlebars-template">
+	<div class="content_card product_card">
+		<div class="content_card__data product_card__data">
+			<div class="product_card__data__pic">
+				<img src="{{ image }}">
+			</div>
+			<div class="product_card__data__info">
+				<span class="content_card__data_label">Product</span>
+				<span class="product_card__data__name-data content_card__data_value">{{ name }}</span>
+				<br>
+				<span class="content_card__data_label">Brand</span>
+				<span class="product_card__data__name-data content_card__data_value">{{ brand }}</span>
+				<br>
+				<span class="content_card__data_label">Season</span>
+				<span class="product_card__data__name-data content_card__data_value">{{ season }}</span>
+				<br>
+				<span class="content_card__data_label">Category</span>
+				<span class="product_card__data__name-data content_card__data_value">{{ category }}</span>
+				<br>
+				<span class="content_card__data_label">Email</span>
+				<span class="product_card__data__email-data content_card__data_value">{{ ownerEmail }}</span>
+				<br>
+				<span class="content_card__data_label">ID</span>
+				<span class="product_card__data__id-data content_card__data_value">{{ toUpperCase id }}</span>
+				<br>
+			</div>
+		</div>
+	<!--	<div class="content_card__data__tags product_card__data__tags">
+			<a class="tags">Customer</a>
+		  	{{#each tags}}
+				<a class="tags">{{this}}</a>
+  			{{/each}}
+		</div> -->
+		<div class="content_card__actions">
+			<i class="ti-email c1" data-id={{ userId }} title="edit"> &nbsp;</i>
+					<i class="ti-notepad" data-id={{ userId }}> &nbsp;</i>
+					<!-- <i class="ti-save" data-id={{ userId }}> &nbsp;</i> -->
+					<i class="ti-trash c2" data-id={{ userId }} onclick="del('fabrics','{{ userId }}')"> &nbsp;</i>
+					<!-- <i class="ti-more-alt" data-id={{ userId }}> &nbsp;</i> -->
+		</div>
+	</div>
+</script>
