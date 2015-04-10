@@ -75,7 +75,7 @@ function beforeSendSetHeader(xhr){
 function loadPage(href){
 	href = href.replace('#/','');
 	history.pushState({}, '', '/#/'+href);
-	ajax('/ajax/'+href.replace('/','.')+'.html', 'GET', 'text/html', {}, true, 'document');
+	ajax('ajax/'+href.replace('/','.')+'.html', 'GET', 'text/html', {}, true, 'document');
 	$('.header__nav').html(href.replace('/',' - '));
 }
 /*
