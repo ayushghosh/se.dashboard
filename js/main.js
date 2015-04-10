@@ -228,6 +228,7 @@ function productsShow(products){
 
 
 switch(location.hostname.split('.').reverse()[0]){
+	case 'me': base = 'http://api.sourceeasy.com';break;
 	case 'com': base = 'http://api.sourceeasy.com';break;
 	case 'dev': base = 'http://api.sourceeasy.dev';
 				// break;
